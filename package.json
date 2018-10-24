@@ -1,0 +1,20 @@
+{
+  "name": "ChallengesDataDashboard",
+  "version": "1.0.0",
+  "description": ">",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && yarn production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaboSecu/ChallengesDataDashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaboSecu/ChallengesDataDashboard/issues"
+  },
+  "homepage": "https://github.com/LaboSecu/ChallengesDataDashboard#readme"
+}
