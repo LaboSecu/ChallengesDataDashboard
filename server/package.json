@@ -25,7 +25,7 @@
     "dev": "nodemon src/",
     "start": "node src/",
     "production": "cd ../client && yarn build && cd ../server && cross-env NODE_ENV=production yarn start",
-    "production:heroku": "cd ../client && yarn add @feathersjs/cli && yarn build && cd ../server && cross-env NODE_ENV=production yarn start"
+    "production:heroku": "cd ../client && yarn global add @vue/cli && yarn build && cd ../server && cross-env NODE_ENV=production yarn start"
   },
   "dependencies": {
     "@feathersjs/configuration": "^2.0.4",
