@@ -26,7 +26,6 @@ app.use(cors());
 app.use(compress());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../../client/dist')));
 
 // Set up Plugins and providers
 app.configure(express.rest());
@@ -41,7 +40,8 @@ app.configure(channels);
 
 if(process.env.NODE_ENV === 'production')
 {
-  app.get('/', function(req, res, next){
+    app.use(express.static(path.join(__dirname, '../../client/dist')));
+    app.get('/', function(req, res, next){
     res.render('index');
   });
 }
