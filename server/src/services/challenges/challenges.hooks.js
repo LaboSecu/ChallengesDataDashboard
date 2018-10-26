@@ -4,6 +4,8 @@ const verifyData = require('../../hooks/verify-data');
 
 const populateChallenge = require('../../hooks/populate-challenge');
 
+const formatName = require('../../hooks/format-name');
+
 module.exports = {
   before: {
     all: [],
@@ -17,7 +19,7 @@ module.exports = {
 
   after: {
     all: [],
-    find: [],
+    find: [formatName()],
     get: [],
     create: [],
     update: [],

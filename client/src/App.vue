@@ -1,16 +1,5 @@
 <template>
   <div id="app">
-    <Board></Board>
+    <router-view/>
   </div>
 </template>
-
-<script>
-  import Board from './components/Board'
-  export default {
-    name: 'app',
-    components : {
-      Board
-    }
-  }
-</script>
-
