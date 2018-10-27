@@ -10,7 +10,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="challenge in challenges().data">
+            <tr v-for="challenge in challenges().data" v-bind:value="challenge.name" :key="challenge.name">
                 <td>{{challenge.email}}</td>
                 <td>{{challenge.name}}</td>
                 <td>{{challenge.date}}</td>
