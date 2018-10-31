@@ -1,5 +1,12 @@
-// eslint-disable-next-line no-unused-vars
+const express = require('express');
+const path = require('path');
+
 module.exports = function (app) {
-  // Add your custom middleware here. Remember that
-  // in Express, the order matters.
+    if(process.env.NODE_ENV === 'production')
+    {
+        app.use(express.static(path.join(__dirname, '../../../client/dist')));
+        app.get('*', function(req, res, next){
+            res.sendFile(path.join(__dirname, '../../../client/dist/index.html'));
+        });
+    }
 };

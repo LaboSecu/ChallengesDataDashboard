@@ -38,14 +38,6 @@ app.configure(services);
 // Set up event channels (see channels.js)
 app.configure(channels);
 
-if(process.env.NODE_ENV === 'production')
-{
-    app.use(express.static(path.join(__dirname, '../../client/dist')));
-    app.get('/', function(req, res, next){
-    res.render('index');
-  });
-}
-
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
 app.use(express.errorHandler({ logger }));
