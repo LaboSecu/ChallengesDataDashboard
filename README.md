@@ -3,7 +3,7 @@
 
 ## About
 
-**client:** This project uses [Vuejs](http://vuejs.org). An open source fribt-end web framework for building progressive applications.
+**client:** This project uses [Vuejs](http://vuejs.org). An open source front-end web framework for building progressive applications.
 **server:** This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
 
 ## Getting Started
