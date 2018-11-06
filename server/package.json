@@ -45,6 +45,7 @@
     "winston": "^3.0.0"
   },
   "devDependencies": {
+    "eslint": "^5.8.0",
     "nodemon": "^1.18.4",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
