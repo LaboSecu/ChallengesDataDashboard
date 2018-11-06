@@ -28,6 +28,9 @@
     "production:heroku": "yarn install && NODE_ENV=production yarn start"
   },
   "dependencies": {
+    "@feathersjs/authentication": "^2.1.13",
+    "@feathersjs/authentication-jwt": "^2.0.5",
+    "@feathersjs/authentication-local": "^1.2.5",
     "@feathersjs/configuration": "^2.0.4",
     "@feathersjs/errors": "^3.3.4",
     "@feathersjs/express": "^1.2.7",
