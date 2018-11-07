@@ -1,0 +1,46 @@
+//variables
+@full-width: 100vw;
+@full-height: 100vh;
+//styles
+#full-page-container {
+  width: @full-width;
+  height: @full-height;
+  #background {
+    width: 100%;
+    height: 100%;
+    .triangle-div {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+    }
+    #bottom-triangle {
+      border-top: @full-height solid transparent;
+      border-left: @full-width solid #555;
+      border-bottom: 0px solid transparent;
+    }
+    #top-triangle {
+      border-top: 0px solid transparent;
+      border-right: @full-width solid #262626;
+      border-bottom: @full-height solid #212121;
+    }
+  }
+  #form-container {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%) translateX(-30%);
+    background: #fff3;
+    max-width: 500px;
+    padding: 20px 20px 0px 20px;
+    .form-input-group{
+      margin: 20px;
+    }
+  }
+}
+
