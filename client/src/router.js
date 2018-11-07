@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
@@ -19,6 +20,11 @@ export default new Router({
 			name: 'dashboard',
 			component: () => import ('./views/Dashboard.vue')
 		},
+        {
+            path: '/login',
+            name: 'login',
+            component: () => import ('./views/LoginForm.vue')
+        },
 		{
 			path: '*',
 			component: PageNotFound
