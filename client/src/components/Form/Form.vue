@@ -87,6 +87,11 @@
                     this.errorPopupDisplayed = true
                 })
             }
+        },
+        created(){
+            document.addEventListener('keydown', (e) => {
+                if(e.keyCode === 13) this.submitLogin()
+            })
         }
     }
 </script>
