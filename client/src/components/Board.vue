@@ -25,7 +25,7 @@
 
 <script>
     import {mapActions, mapState} from "vuex";
-    import { challengesService } from "../feathers-services";
+    import {challengesService} from "../feathers-services";
 
     export default {
         computed: {
@@ -38,12 +38,16 @@
                 findChallenges: 'challenges/findChallenges',
                 addChallenge: 'challenges/addChallenge'
             }),
-            getChallengeStatus(challengePassed){
-                if(challengePassed === true) {return 'Passed'}
-                else{return 'Failed'}
+            getChallengeStatus(challengePassed) {
+                if (challengePassed === true) {
+                    return 'Passed'
+                }
+                else {
+                    return 'Failed'
+                }
             }
         },
-        created(){
+        created() {
             this.findChallenges();
             challengesService.on('created', challenge => this.addChallenge(challenge));
         }

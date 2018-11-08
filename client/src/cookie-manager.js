@@ -1,9 +1,9 @@
-/*export const setCookie = function(cname, cvalue, exdays) {
+export const setCookie = function(cname, cvalue, exdays) {
 	let d = new Date()
 	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))
 	let expires = 'expires='+d.toUTCString()
 	document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
-}*/
+}
 
 export const getCookie = function (cname) {
 	let name = cname + '='
@@ -21,6 +21,6 @@ export const getCookie = function (cname) {
 }
 
 export const checkCookie = function () {
-	let accessToken = getCookie('accessToken')
+	let accessToken = getCookie('access-token')
 	return accessToken !== ''
 }

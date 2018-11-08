@@ -1,10 +1,14 @@
 /* eslint-disable indent */
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import PageNotFound from './views/PageNotFound'
+import {checkCookie} from "./cookie-manager"
 
 Vue.use(Router)
+
+const checkCookieBeforeEnter = (to, from, next) => {
+    if(checkCookie() === false) next('/login')
+    else next()
+}
 
 export default new Router({
 	mode: 'history',
@@ -13,21 +17,23 @@ export default new Router({
 		{
 			path: '/',
 			name: 'home',
-			component: Home
+			component: () => import ('./views/Home.vue'),
+            beforeEnter: checkCookieBeforeEnter
 		},
 		{
 			path: '/dashboard',
 			name: 'dashboard',
-			component: () => import ('./views/Dashboard.vue')
+			component: () => import ('./views/Dashboard.vue'),
+            beforeEnter: checkCookieBeforeEnter
 		},
         {
             path: '/login',
             name: 'login',
-            component: () => import ('./views/LoginForm.vue')
+            component: () => import ('./views/Login.vue')
         },
 		{
 			path: '*',
-			component: PageNotFound
+			component: () => import ('./views/PageNotFound.vue')
 		}
 	]
-})
+});
