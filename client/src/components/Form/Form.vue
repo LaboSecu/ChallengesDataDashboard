@@ -13,25 +13,29 @@
         <div class="input-group input-group-submit">
             <button @click='submitLogin'>Submit</button>
         </div>
+        <ErrorPopup v-if="errorPopupDisplayed" error-message="The Email or Password you entered is incorrect."/>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
     import Router from '../../router'
-    import LinearGrowDiv from '../LinearGrowDiv'
     import {setCookie} from "../../cookie-manager";
+    import LinearGrowDiv from '../LinearGrowDiv'
+    import ErrorPopup from '../ErrorPopup/ErrorPopup'
     import './Form.less'
 
     export default {
         name: 'LoginForm',
         components: {
-            LinearGrowDiv
+            LinearGrowDiv,
+            ErrorPopup
         },
         data() {
             return {
                 firstDivExtended: false,
                 secondDivExtended: false,
+                errorPopupDisplayed: false,
                 mailInput: '',
                 passwordInput: ''
             }
@@ -75,9 +79,13 @@
                     password: passwordInput,
                     strategy: 'local'
                 }).then((response) => {
-                    setCookie("access-token", response.data.accessToken, 7)
-                    Router.push('dashboard')
-                }).catch((err) => {throw new Error(err)})
+                    if(response.status === 201) {
+                        setCookie("access-token", response.data.accessToken, 7)
+                        Router.push('dashboard')
+                    }
+                }).catch(() => {
+                    this.errorPopupDisplayed = true
+                })
             }
         }
     }
