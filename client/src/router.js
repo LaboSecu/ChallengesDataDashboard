@@ -10,6 +10,11 @@ const checkCookieBeforeEnter = (to, from, next) => {
     else next()
 }
 
+const checkCookieInLogin = (to, from, next) => {
+    if(checkCookie()) next('/')
+    else next()
+}
+
 export default new Router({
 	mode: 'history',
 	base: process.env.BASE_URL,
@@ -29,7 +34,8 @@ export default new Router({
         {
             path: '/login',
             name: 'login',
-            component: () => import ('./views/Login.vue')
+            component: () => import ('./views/Login.vue'),
+            beforeEnter: checkCookieInLogin
         },
 		{
 			path: '*',

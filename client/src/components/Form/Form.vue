@@ -12,6 +12,7 @@
         </div>
         <div class="input-group input-group-submit">
             <button @click='submitLogin'>Submit</button>
+            <img v-if="submitPending" src="tail-spin.svg"/>
         </div>
         <ErrorPopup v-if="errorPopupDisplayed" error-message="The Email or Password you entered is incorrect."/>
     </div>
@@ -37,7 +38,8 @@
                 secondDivExtended: false,
                 errorPopupDisplayed: false,
                 mailInput: '',
-                passwordInput: ''
+                passwordInput: '',
+                submitPending: false
             }
         },
         methods: {
@@ -74,6 +76,7 @@
             submitLogin: function(){
                 let mailInput = this.mailInput
                 let passwordInput = this.passwordInput
+                this.submitPending = true
                 axios.post('http://localhost:3030/authentication', {
                     email: mailInput,
                     password: passwordInput,
@@ -81,6 +84,7 @@
                 }).then((response) => {
                     if(response.status === 201) {
                         setCookie("access-token", response.data.accessToken, 7)
+                        this.submitPending = false
                         Router.push('dashboard')
                     }
                 }).catch(() => {
