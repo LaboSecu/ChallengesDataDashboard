@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "yarn lint && vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "node_modules/.bin/eslint .",
     "lint:fix": "node_modules/.bin/eslint . --fix"

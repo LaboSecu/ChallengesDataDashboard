@@ -22,10 +22,10 @@
     "yarn": ">= 0.18.0"
   },
   "scripts": {
-    "dev": "nodemon src/",
+    "dev": "yarn lint && nodemon src/",
     "start": "node src/",
-    "production": "cd ../client && yarn build && cd ../server && cross-env NODE_ENV=production PORT=5000 yarn start",
-    "production:heroku": "yarn install && NODE_ENV=production yarn start"
+    "lint": "node_modules/.bin/eslint .",
+    "lint:fix": "node_modules/.bin/eslint . --fix"
   },
   "dependencies": {
     "@feathersjs/authentication": "^2.1.13",
