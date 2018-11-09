@@ -9,6 +9,6 @@
     import './2TriangleBackground.less'
 
     export default{
-        name: "TriangleBackground"
+        name: 'TriangleBackground'
     }
 </script>

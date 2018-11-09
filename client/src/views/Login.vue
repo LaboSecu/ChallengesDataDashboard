@@ -10,7 +10,7 @@
     import Background from '../components/2TriangleBackground/2TriangleBackground'
 
     export default {
-        name: "Login",
+        name: 'Login',
         components: {
             Form,
             Background

@@ -1,21 +1,21 @@
 <template>
     <div>
-        <table class="table">
-            <thead class="thead-dark">
+        <table class='table'>
+            <thead class='thead-dark'>
             <tr>
-                <th scope="col">Email</th>
-                <th scope="col">Name</th>
-                <th scope="col">Last Try</th>
-                <th scope="col">Challenge Status</th>
+                <th scope='col'>Email</th>
+                <th scope='col'>Name</th>
+                <th scope='col'>Last Try</th>
+                <th scope='col'>Challenge Status</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="challenge in challenges" v-bind:value="challenge._id" :key="challenge._id">
+            <tr v-for='challenge in challenges' v-bind:value='challenge._id' :key='challenge._id'>
                 <td>{{challenge.email}}</td>
                 <td>{{challenge.name}}</td>
                 <td>{{challenge.date}}</td>
-                <td><span class="badge"
-                          v-bind:class="{'badge-success' : challenge.challengePassed, 'badge-danger' : challenge.challengePassed === false }">{{getChallengeStatus(challenge.challengePassed)}}</span>
+                <td><span class='badge'
+                          v-bind:class='{"badge-success" : challenge.challengePassed, "badge-danger" : challenge.challengePassed === false }'>{{getChallengeStatus(challenge.challengePassed)}}</span>
                 </td>
             </tr>
             </tbody>
@@ -24,8 +24,8 @@
 </template>
 
 <script>
-    import {mapActions, mapState} from "vuex";
-    import {challengesService} from "../feathers-services";
+    import {mapActions, mapState} from 'vuex';
+    import {challengesService} from '../feathers-services';
 
     export default {
         computed: {

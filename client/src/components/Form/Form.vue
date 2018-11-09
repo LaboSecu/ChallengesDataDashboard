@@ -1,27 +1,27 @@
 <template>
     <div id='form-container'>
         <div class='input-group'>
-            <input type="text" required placeholder='Email...' v-model="mailInput" @focus='toggleExtensionDiv(1, 0)'
+            <input type='text' required placeholder='Email...' v-model='mailInput' @focus='toggleExtensionDiv(1, 0)'
                    @blur='toggleExtensionDiv(1, 1)'>
             <LinearGrowDiv v-bind:extended='firstDivExtended'/>
         </div>
         <div class='input-group'>
-            <input type="password" required placeholder='Password...' v-model="passwordInput" @focus='toggleExtensionDiv(2, 0)'
+            <input type='password' required placeholder='Password...' v-model='passwordInput' @focus='toggleExtensionDiv(2, 0)'
                    @blur='toggleExtensionDiv(2, 1)'>
             <LinearGrowDiv v-bind:extended='secondDivExtended'/>
         </div>
-        <div class="input-group input-group-submit">
+        <div class='input-group input-group-submit'>
             <button @click='submitLogin'>Submit</button>
-            <img v-if="submitPending" src="tail-spin.svg"/>
+            <img v-if='submitPending' src='tail-spin.svg'/>
         </div>
-        <ErrorPopup v-if="errorPopupDisplayed" error-message="The Email or Password you entered is incorrect."/>
+        <ErrorPopup v-if='errorPopupDisplayed' error-message='The Email or Password you entered is incorrect.'/>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
     import Router from '../../router'
-    import {setCookie} from "../../cookie-manager";
+    import {setCookie} from '../../cookie-manager';
     import LinearGrowDiv from '../LinearGrowDiv'
     import ErrorPopup from '../ErrorPopup/ErrorPopup'
     import './Form.less'
@@ -83,7 +83,7 @@
                     strategy: 'local'
                 }).then((response) => {
                     if(response.status === 201) {
-                        setCookie("access-token", response.data.accessToken, 7)
+                        setCookie('access-token', response.data.accessToken, 7)
                         this.submitPending = false
                         Router.push('dashboard')
                     }

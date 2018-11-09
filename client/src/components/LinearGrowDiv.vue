@@ -1,7 +1,7 @@
 <!--suppress ALL -->
 <template>
-    <svg style="width: 100%; height: 4px;" xmlns="http://www.w3.org/2000/svg">
-        <line x1="0%" x2="100%" y1="0" y2="0" v-bind:class="{'shape1': true, 'shape2': extended}" style="width: 100%; height: 100%;"></line>
+    <svg style='width: 100%; height: 4px;' xmlns='http://www.w3.org/2000/svg'>
+        <line x1='0%' x2='100%' y1='0' y2='0' v-bind:class='{"shape1": true, "shape2": extended}' style='width: 100%; height: 100%;'></line>
     </svg>
 </template>
 
@@ -30,7 +30,7 @@
 
 <script>
     export default{
-        name: "LinearGrowDiv",
+        name: 'LinearGrowDiv',
         props: {
             extended: Boolean
         }
