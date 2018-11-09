@@ -90,6 +90,15 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@feathersjs/authentication-client@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@feathersjs/authentication-client/-/authentication-client-1.0.8.tgz#c39dd768023e0d469b55cc33549d1708d20e14f6"
+  integrity sha512-ISE4XFHbCQQan0M/TWe3R7V+bnoExpZWZghBIrK/q5P88G//EJoCzw+nU5lF9BhUxQqViEBqUIgkg1NKwqj/OQ==
+  dependencies:
+    "@feathersjs/errors" "^3.3.4"
+    debug "^4.0.0"
+    jwt-decode "^2.1.0"
+
 "@feathersjs/authentication-jwt@^2.0.5":
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@feathersjs/authentication-jwt/-/authentication-jwt-2.0.7.tgz#54cc2d263f24a27acf4244e0a7087d98f3be2109"
@@ -2236,6 +2245,11 @@ jws@^3.1.5:
   dependencies:
     jwa "^1.1.5"
     safe-buffer "^5.0.1"
+
+jwt-decode@^2.1.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
+  integrity sha1-fYa9VmefWM5qhHBKZX3TkruoGnk=
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
