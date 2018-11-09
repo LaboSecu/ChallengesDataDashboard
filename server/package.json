@@ -48,8 +48,6 @@
     "winston": "^3.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "8",
-    "eslint": "4.x",
     "nodemon": "^1.18.4",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
