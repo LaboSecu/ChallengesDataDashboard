@@ -1,5 +1,4 @@
-
-
+const { authenticate } = require('@feathersjs/authentication').hooks
 const verifyData = require('../../hooks/verify-data')
 
 const populateChallenge = require('../../hooks/populate-challenge')
@@ -7,7 +6,7 @@ const populateChallenge = require('../../hooks/populate-challenge')
 module.exports = {
 	before: {
 		all: [],
-		find: [],
+		find: [authenticate('jwt')],
 		get: [],
 		create: [verifyData(), populateChallenge()],
 		update: [],
