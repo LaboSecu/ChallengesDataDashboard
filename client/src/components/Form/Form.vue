@@ -77,7 +77,7 @@
                 let mailInput = this.mailInput
                 let passwordInput = this.passwordInput
                 this.submitPending = true
-                axios.post('http://localhost:3030/authentication', {
+                axios.post('/authentication', {
                     email: mailInput,
                     password: passwordInput,
                     strategy: 'local'
