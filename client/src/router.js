@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import {checkCookie} from './cookie-manager'
+import { getCookie } from './cookie-manager'
+import { client } from './feathers-services'
 
 Vue.use(Router)
 
-const checkCookieBeforeEnter = (to, from, next) => {
-	if(checkCookie() === false) next('/login')
-	else next()
+function checkCookieIsValidBeforeEnter(to, from, next){
+	if(client.passport.payloadIsValid(getCookie('access-token')) === true) next()
+	else next('login')
 }
 
-const checkCookieInLogin = (to, from, next) => {
-	if(checkCookie()) next('/')
+function checkCookieInLogin(to, from, next){
+	if(client.passport.payloadIsValid(getCookie('access-token')) === true) next('/')
 	else next()
 }
 
@@ -22,13 +23,13 @@ export default new Router({
 			path: '/',
 			name: 'home',
 			component: () => import ('./views/Home.vue'),
-			beforeEnter: checkCookieBeforeEnter
+			beforeEnter: checkCookieIsValidBeforeEnter
 		},
 		{
 			path: '/dashboard',
 			name: 'dashboard',
 			component: () => import ('./views/Dashboard.vue'),
-			beforeEnter: checkCookieBeforeEnter
+			beforeEnter: checkCookieIsValidBeforeEnter
 		},
 		{
 			path: '/login',
