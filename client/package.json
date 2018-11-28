@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "yarn lint && vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "node_modules/.bin/eslint .",
-    "lint:fix": "node_modules/.bin/eslint . --fix"
+    "lint": "node_modules/.bin/eslint . -c ../.eslintrc.js"
   },
   "dependencies": {
     "@feathersjs/authentication-client": "^1.0.6",
@@ -23,6 +22,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",

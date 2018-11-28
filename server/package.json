@@ -24,8 +24,7 @@
   "scripts": {
     "dev": "yarn lint && nodemon src/",
     "start": "node src/",
-    "lint": "node_modules/.bin/eslint .",
-    "lint:fix": "node_modules/.bin/eslint . --fix"
+    "lint": "./node_modules/.bin/eslint . -c ../.eslintrc.js"
   },
   "dependencies": {
     "@feathersjs/authentication": "^2.1.13",

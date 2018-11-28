@@ -17,10 +17,6 @@ module.exports = {
             "error",
             "tab"
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
         "quotes": [
             "error",
             "single"
@@ -28,6 +24,8 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
+        ],
+      "no-unused-vars": 0,
+      "no-useless-escape": 0
     }
 };

@@ -89,6 +89,7 @@
                     }
                 }).catch(() => {
                     this.errorPopupDisplayed = true
+                    this.submitPending = false
                 })
             }
         },

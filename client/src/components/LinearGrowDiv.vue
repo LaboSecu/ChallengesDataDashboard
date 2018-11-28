@@ -8,7 +8,7 @@
 <style>
     svg{
         vertical-align:top;
-        margin-top: 10px;
+        margin-top: 2px;
     }
     .shape1{
         stroke-dasharray: 500;
